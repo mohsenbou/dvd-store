@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DVDStore: le grand choix de film </title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+    <H1>Bienvenu dans la page de gestion des films</H1>
+    <h2>films encore disponibles: </h2>
+    <ul>
+        <li><a href="add-movie-form">Ajout d'un film</a></li>
+    </ul>
+
+    <h3>faite votre choix</h3>
+	<section class="container">
+	    <div class="left-half">
+	        <article id="movie-list">
+
+	        </article>
+	    </div>
+	    <div class="right-half">
+	        <article id="movie-detail">
+
+	        </article>
+	    </div>
+	</section>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

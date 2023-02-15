@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail du film</title>
+</head>
+<body>
+<form th:action="@{/movie/add}" method="POST" th:object="${movieForm}">
+    <p>Titre <input type="text" th:field="*{title}"/></p>
+    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+    <p>Genre
+        <select th:field="*{genre}">
+            <option th:value="COMEDIE" th:text="Comédie"></option>
+            <option th:value="HORREUR" th:text="Horreur"></option>
+            <option th:value="THRILLER" th:text="Thriller"></option>
+            <option th:value="ACTION" th:text="Action"></option>
+            <option th:value="ROMANTIQUE" th:text="Romantique"></option>
+            <option th:value="DRAME" th:text="Drame"></option>
+            <option th:value="ANIMATION" th:text="Animation"></option>
+        </select>
+    </p>
+    <p>Description :</p>
+    <p><textarea rows="5" cols="33" th:field="*{description}"/></p>
+    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+    <input type="submit" value="OK"/>
+</form>
+</body>
+</html>
